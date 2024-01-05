@@ -1,5 +1,6 @@
 package com.omertasci.passvault.entity;
 
+import com.omertasci.passvault.util.EncryptionUtil;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,11 +35,19 @@ public class Entry {
     @Column(name = "note")
     private String note;
 
-    @Column(name = "create_date")
+    @Column(name = "create_date", updatable = false)
     @CreationTimestamp
     private Date createDate;
 
     @Column(name = "update_date")
     @UpdateTimestamp
     private Date updateDate;
+
+    public String getPassword() {
+        return EncryptionUtil.decrypt(password);
+    }
+    public void setPassword(String password) {
+        this.password = EncryptionUtil.encrypt(password);
+//        this.password = password;
+    }
 }

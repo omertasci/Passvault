@@ -1,9 +1,10 @@
 
 let dataTable = $('#entryTable').DataTable();
 
-/*dataTable.on('datatable.search', function(query, matched) {
-    console.log(query);
-});*/
+$( document ).ready(function() {
+    	$('#entryTable_filter').css({"display": "flex","justify-content": "flex-end","align-items": "center"});
+});
+
 
 const entryModal = document.getElementById('entryDetailModal')
 
@@ -14,7 +15,7 @@ if (entryModal) {
 
     if(id ==='new') return;
 
-    var entryController = new EntryController();
+    let entryController = new EntryController();
     entryController.getEntryById(id, function(entryData){
             const modalTitle = entryModal.querySelector('.modal-title')
             const idInput = entryModal.querySelector('#id')
@@ -44,7 +45,7 @@ if (entryModal) {
 }
 
 function save_entry(){
-    var entryDto = {
+    let entryDto = {
                 id : entryModal.querySelector('#id').value,
                 title : entryModal.querySelector('#title-name').value,
                 username : entryModal.querySelector('#username-text').value,
@@ -53,7 +54,7 @@ function save_entry(){
                 note : entryModal.querySelector('#note').value
     };
 
-    var entryController = new EntryController();
+    let entryController = new EntryController();
     entryController.saveEntry(entryDto,
         function(data){
             alert('Entry saved');

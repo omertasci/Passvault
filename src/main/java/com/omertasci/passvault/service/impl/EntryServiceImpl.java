@@ -1,10 +1,10 @@
 package com.omertasci.passvault.service.impl;
 
-import com.omertasci.passvault.util.MapUtil;
 import com.omertasci.passvault.dto.EntryDto;
 import com.omertasci.passvault.entity.Entry;
 import com.omertasci.passvault.repository.EntryRepository;
 import com.omertasci.passvault.service.EntryService;
+import com.omertasci.passvault.util.MapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
