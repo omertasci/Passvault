@@ -2,6 +2,7 @@
 let dataTable = $('#entryTable').DataTable();
 
 $( document ).ready(function() {
+        moment.locale(navigator.language);
     	$('#entryTable_filter').css({"display": "flex","justify-content": "flex-end","align-items": "center"});
 });
 

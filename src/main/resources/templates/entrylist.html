@@ -73,7 +73,7 @@
                     <td><span th:text="${entry.username}"> Username </span></td>
                     <td><span> ***** </span></td>
                     <td><span th:text="${entry.weblink}"> Weblink </span></td>
-                    <td><span th:text="${#dates.format(entry.createDate, 'dd-MMM-yyyy HH:mm')}"> Create Date </span></td>
+                    <td><span th:text="${#dates.format(entry.createDate, 'dd MMMM yyyy HH:mm')}"> Create Date </span></td>
                     <td>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#entryDetailModal" th:attr="data-bs-entryid=${entry.id}"><i class="bi bi-eye-slash"></i></button>
                     </td>
